@@ -26,7 +26,7 @@ jobs:
           include-prerelease: true
 
       - name: Azure Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
@@ -68,11 +68,11 @@ jobs:
         with:
           name: .net-app
 
+  
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'api-blog'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
-          package: .
+            app-name: 'api-blog'
+            slot-name: 'Production'
+            package: .
