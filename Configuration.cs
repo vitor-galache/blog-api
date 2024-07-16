@@ -2,6 +2,6 @@
 
 public class Configuration
 {
-    public static string JwtKey { get; set; }
+    public static string JwtKey { get; set; } = null!;
     
 }
